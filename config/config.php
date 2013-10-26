@@ -1,7 +1,7 @@
 #  Config File:
 #  CS174_hw3
 #  Pedro Flores, Samira C. Oliva
-#
+
 
 <!--config.php should have configuration constants for things like
 database and password. The config folder should have a file create.php

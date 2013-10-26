@@ -1,6 +1,6 @@
 #  Config File:
 #  CS174_hw3
-#  Pedro Flores, Samira C. Oliva
+#  Pedro A. Flores, Samira C. Oliva
 
 
 <!--config.php should have configuration constants for things like

@@ -2,7 +2,7 @@
 
 /*
 # index.php
-# CS174_hw3 -- 
+# CS174_hw3
 # Pedro A. Flores Prieto, Samira C. Oliva Madrigal
 */
 

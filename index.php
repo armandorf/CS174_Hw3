@@ -36,8 +36,7 @@ EOD2;
 if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
 {
        $pivot = strtolower($_GET['c']);
-       switch(strtolower($pivot)
-        {
+       switch(strtolower($pivot)) {
             case "main":
             require_once('./controllers/main.php');
             mainController();

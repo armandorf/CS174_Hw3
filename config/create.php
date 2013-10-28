@@ -23,7 +23,7 @@
     }
 
     // CREATE THE NECESSARY TABLES
-    $sql = "CREATE TABLE Persons 
+    $sql = "CREATE TABLE Poems
     (
         title VARCHAR(100),
         poem VARCHAR(500),

@@ -1,6 +1,6 @@
-# Create File:
+<!--# Create File:
 # CS174_hw3
-# Pedro Flores, Samira C. Oliva
+# Pedro Flores, Samira C. Oliva-->
 
 
 <?php
@@ -23,12 +23,31 @@
     }
 
     // CREATE THE NECESSARY TABLES
-    $sql = "CREATE TABLE Poems
+    $poems_table_query = "CREATE TABLE Poems
     (
         title VARCHAR(100),
-        poem VARCHAR(500),
-        date_uploaded DATETIME NOT NULL, 
-        PRIMARY KEY(date_uploaded);
+        poem_content VARCHAR(500),
+        datetime_uploaded DATETIME NOT NULL, 
+        PRIMARY KEY(title),
     )";
+    // execute creation of table Poems
+    if (mysqli_query($db_connect, $poems_table_query)) {
+        echo "Table Poems created successfully";
+    } else {
+        echo "Error creating table: " . mysqli_error($db_connect);
+    }
+    
+    // create a table to store most recent time of featured poem displayed
+    $poem_display_time = "CREATE TABLE Timestamp
+        (
+            time_of_display DATETIME NOT NULL,
+            PRIMARY KEY (time_of_display)
+        )";
+    
+    if (mysqli_query($db_connect, $poem_display_time)) {
+        echo "Table Poems created successfully";
+    } else {
+        echo "Error creating table: " . mysqli_error($db_connect);
+    }
     // DATETIME example: YYYY-MM-DD HH:MM:SS, such as 2008-10-23 10:37:22
 ?>

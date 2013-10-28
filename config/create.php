@@ -5,10 +5,10 @@
 
 <?php
     include_once("config.php");
-    
+
     // CREATE NEW DATABASE
     $db_connect = mysqli_connect("$host_name", "$admin_name", "$admin_passwd");
-    
+
     // CONNECT TO A DATABASE // 
     // Check connection
     if (mysqli_connect_errno()) {
@@ -21,7 +21,14 @@
     } else {
         echo "Error creatingc database: " . mysqli_error($db_connect);
     }
-    
+
     // CREATE THE NECESSARY TABLES
-    
+    $sql = "CREATE TABLE Persons 
+    (
+        title VARCHAR(100),
+        poem VARCHAR(500),
+        date_uploaded DATETIME NOT NULL, 
+        PRIMARY KEY(date_uploaded);
+    )";
+    // DATETIME example: YYYY-MM-DD HH:MM:SS, such as 2008-10-23 10:37:22
 ?>

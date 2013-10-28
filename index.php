@@ -1,5 +1,4 @@
 <?php
-
 /*
 # index.php
 # CS174_hw3
@@ -10,8 +9,7 @@ session_start();
 include_once("config/config.php");
 $controllers = array("main");
 
-//-----
-// vars
+// HEADER
 $header = <<< EOD1
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="author" content="Copyrigth 2013 Pedro A. Flores Prieto, Samira C. Oliva Madrigal"/>
@@ -22,9 +20,10 @@ $header = <<< EOD1
         <link rel="icon" type="image/png" href="/css/logo.png"/>
         <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
         </head>       
-         <body>
+        <body>
 EOD1;
 
+// FOOTER
 $footer = <<< EOD2
 <!-- footer -->
 </body>
@@ -38,13 +37,13 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
        $pivot = strtolower($_GET['c']);
        switch(strtolower($pivot)) {
             case "main":
-            require_once('./controllers/main.php');
+            require_once(BASEURL.'/controllers/main.php');
             mainController();
             draw($_SESSION['view']);
             break;
 
             case "upload":
-            require_once('./controllers/upload.php');
+            require_once(BASEURL.'/controllers/upload.php');
             uploadController();
             draw($_SESSION['view']);
         }
@@ -66,7 +65,7 @@ function draw($view)
     
     <?php    
         echo $header;    
-        require_once("./views/{$view}.php"); 
+        require_once(BASEURL."/views/{$view}.php"); 
         echo $footer;
 }
 

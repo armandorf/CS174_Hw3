@@ -7,10 +7,14 @@
 
 session_start();
 include_once("config/config.php");
-$controllers = array("main");
+$controllers_available = array("main", "upload", );
 
-// HEADER
+// HEADER definition
 $header = <<< EOD1
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title><?php echo(SITENAME) ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="author" content="Copyrigth 2013 Pedro A. Flores Prieto, Samira C. Oliva Madrigal"/>
         <meta name="description" content="LooneyLimericks.com" />
@@ -19,11 +23,11 @@ $header = <<< EOD1
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="icon" type="image/png" href="/css/logo.png"/>
         <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
-        </head>       
-        <body>
+    </head>       
+    <body>
 EOD1;
 
-// FOOTER
+// FOOTER definition
 $footer = <<< EOD2
 <!-- footer -->
 </body>
@@ -31,7 +35,7 @@ $footer = <<< EOD2
 EOD2;
 
 //-------------------------------------------------------------
-//Determine the Controller to call
+//Determine the Controller to call to decide what view to draw
 if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
 {
        $pivot = strtolower($_GET['c']);
@@ -56,17 +60,10 @@ function draw($view)
 {
     global $header;
     global $footer;
-    echo   $header;
-?>    
-<!DOCTYPE html>
-    <html>
-        <head>
-            <title><?php echo(SITENAME) ?></title>
     
-    <?php    
-        echo $header;    
-        require_once(BASEURL."/views/{$view}.php"); 
-        echo $footer;
+    echo $header;    
+    require_once(BASEURL."/views/{$view}.php"); 
+    echo $footer;
 }
 
-?>
+?> <!-- main bracket -->

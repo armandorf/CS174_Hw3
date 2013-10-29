@@ -4,13 +4,10 @@
 # Pedro A. Flores Prieto & Samira C. Oliva Madrigal
 # CS174_HW3
 
-
-abstract class baseController
+class BaseController
 {
- 
-   //selects appropriate view			
-	abstract function controller();
-	
+   //selects appropriate view		
+	 function controller();
 }
 
 ?>

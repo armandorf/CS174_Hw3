@@ -1,0 +1,9 @@
+<?php
+
+/*
+# landing.php view
+
+*/
+
+
+?>

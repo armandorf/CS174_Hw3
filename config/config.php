@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 #  Config File:
 #  CS174_hw3
@@ -16,10 +17,18 @@
     // site name to put on title bar
     define("SITENAME", "Looney Limericks");
 
+    //define the database
+    define("qDATABASE", "POEMS_DB");
+
     // dababase connection info
     $host_name = "localhost";
     $admin_name = "root";
-    $admin_passwd = "xampp";
+    $admin_passwd = "rosso99";
     
 ?>
+
+
+
+
+
 

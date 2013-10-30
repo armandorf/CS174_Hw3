@@ -7,39 +7,43 @@
 <?php
 session_start();
 include_once("./config/config.php");
-$controllers_available= array('main','upload');
-
+$controllers_available= array('main', 'upload', 'single_poem');
+$controller = ""; // will contain the controller that will call the proper view
+//
 //-------------------------------------------------------------
 //Determine the Controller to call to decide what view to draw
-if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
+if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
 {
-       $pivot = strtolower($_GET['c']);
-       switch(strtolower($pivot)) {
-            case "main":
-            require_once(BASEURL.'/controllers/main.php');
-            mainController();
-            draw($_SESSION['view']);
+   $pivot = strtolower($_GET['c']);
+   switch(strtolower($pivot)) {
+        case "main":
+//          require_once(BASEURL.'/controllers/main.php');
+            $controller = $pivot;
+            // draw($_SESSION['view']);
             break;
 
-            case "upload":
-            require_once(BASEURL.'/controllers/upload.php');
-            uploadController();
-            draw($_SESSION['view']);
-        }
+        case "upload":
+//            require_once(BASEURL.'/controllers/upload.php');
+//            uploadController();
+//            draw($_SESSION['main']);
+            $controller = $pivot;
+            break;
         
+        case "single_poem":
+            $controller = $pivot;
+//            require_once(BASEURL.'/controllers/single_poem.php');
+//            mainController();
+//            draw($_SESSION['view']);
+            break;
+            
+        default:
+            $controller = "main";
+    }
 }
 
-////-------------------------------------------------------------
-////draw the view
-//function draw($view)
-//{
-//    global $header;
-//    global $footer;
-//    
-//    echo $header;    
-//    require_once(BASEURL."/views/{$view}.php"); 
-//    echo $footer;
-}
+// decide what to do with $controller:
+// WELL, DRAW THE PROPER VIEW:
+// 
 
 ?> 
 

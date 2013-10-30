@@ -11,7 +11,17 @@
     require_once(BASEURL.'/config/config.php');
 
     class BaseModel {
-        function load();
+        function uploadNewPoem($title, $poem, $author, $timestamp, $starRating) {
+            
+        }
+
+        function getRandomPoem($randIDNum) {
+            
+        }
+
+        function getPoemByTitle($title) {
+            
+        }
     }
 
 ?>

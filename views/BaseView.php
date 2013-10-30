@@ -26,10 +26,6 @@ HEADER;
 </html>
 FOOTER;
 
-//        function __construct() {
-//            
-//        }
-
         public function printHeader() {
             echo $this->header;
         }

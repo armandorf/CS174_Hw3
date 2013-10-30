@@ -18,15 +18,12 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
         case "main":
             $controller = $pivot;
             break;
-
         case "upload":
             $controller = $pivot;
             break;
-        
         case "single_poem":
             $controller = $pivot;
             break;
-            
         default:
             $controller = "main";
     }
@@ -41,7 +38,7 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
 <?php 
     require_once("./config/config.php");
     // test if database works
-    
+    // if
 ?>
 <?php 
     include_once './views/BaseView.php';

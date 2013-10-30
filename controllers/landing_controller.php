@@ -9,13 +9,6 @@
     class main extends BaseController
     {
         
-        // selects appropriate view
-        function controller() {
-            
-        
-        
-        }
-        
         function getTenMostRecentPoems () {
             // MySQL query to show 10 most recent poem entries by time or uploading
             $getEntriesByDate = "SELECT * FROM animals ORDER BY grp,id";

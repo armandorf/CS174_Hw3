@@ -1,1 +1,5 @@
-#
+public function drawPoemView() {
+        
+        }
+        
+      

@@ -7,6 +7,8 @@
 <?php
 session_start();
 include_once("./config/config.php");
+
+
 $controllers_available= array('landing', 'upload', 'single_poem');
 $controller = ""; // will contain the controller that will call the proper view
 
@@ -15,8 +17,9 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
 {
    $pivot = strtolower($_GET['c']);
    switch(strtolower($pivot)) {
-        case "landing":
-            // call "landing" controller
+        case "landing_controller":
+            include_once("./controllers/landing_controller.php");
+            $_SESSION['view'] = $_GET['c'];
             
             $controller = $pivot;
             
@@ -28,12 +31,11 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
             $controller = $pivot;
             break;
         default:
-            $controller = "landing";
+            $_GET["c"] = "landing_controller";
     }
 }
 
-// decide what to do with $controller:
-// WELL, DRAW THE PROPER VIEW:
+
 
 
 ?> 
@@ -45,10 +47,26 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
 ?>
 <?php 
     include_once './views/BaseView.php';
+    include_once './views/upload.php';
+    
     $b = new BaseView;
+    $a = new upload;
+    
+    $a->drawUploadView();
+    
     
     $b->printHeader();
     echo "something here";
     echo '<br>';
+    
     $b->printFooter();
+    
+   
+    
+    
+   
+    
+    
+    
+    
 ?>

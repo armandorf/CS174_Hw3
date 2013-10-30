@@ -11,10 +11,7 @@
             parent::printFooter();
         }
         
-        public function functionName($param) {
-            
-        }
-    
+        
         
     }
    

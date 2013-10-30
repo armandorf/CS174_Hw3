@@ -30,11 +30,12 @@
      */
     $table = "CREATE TABLE poems
     (
-        id MEDIUMINT NOT NULL AUTO_INCREMENT,
         title VARCHAR(100) NOT NULL, 
         content VARCHAR(500) NOT NULL,
+        authorName VARCHAR(100) NOT NULL,
         starAverage INT,
-        timeStamp DATETIME NOT NULL,         
+        timeStamp DATETIME NOT NULL,
+        id MEDIUMINT NOT NULL AUTO_INCREMENT,
         PRIMARY KEY (id)
     )";
     if (mysqli_query($db_connect, $table))

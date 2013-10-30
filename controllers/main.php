@@ -4,9 +4,9 @@
 # Pedro A. Flores Prieto, Samira C. Oliva Madrigal
 
     require_once('baseController.class.php');
-    require_once('./models/featured.php');
+    require_once(BASEURL.'/models/featured.php');
 
-    class MainController extends BaseController
+    class main extends BaseController
     {
         
         // selects appropriate view

@@ -9,7 +9,7 @@ which when run from the command line creates the intial database or the grader.-
 
 <?php 
     //base URL for the website
-    define("BASEURL", 'http://localhost/CS173_Hw3/');
+    define("BASEURL", 'http://localhost/CS173_Hw3');
 
     // site name to put on title bar
     define("SITENAME", "Looney Limericks");

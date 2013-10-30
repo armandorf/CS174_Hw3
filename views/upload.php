@@ -1,6 +1,6 @@
 <?php ?>
 
-<form name="poem_data" method="get" <?php echo "action=\"BASEURL.controllers/upload.php\"" ?> >
+<form name="poem_data" method="get" <?php echo 'action='."\"".BASEURL."/controllers/upload.php\"" ?> >
     <fieldset>
         <legend>
             Upload your Limerick
@@ -20,6 +20,5 @@
             <textarea rows="15" cols="40" id="poem_contents" name="poem_contents" required="required"></textarea>
         </label>
         <input type="submit" name="submit_poem">
-        
     </fieldset>
 </form>  

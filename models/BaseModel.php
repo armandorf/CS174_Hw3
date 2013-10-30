@@ -8,7 +8,7 @@
     # controllers. Controllers request information from models.
     */
 
-    require_once(BASEURL.'config/config.php');
+    require_once(BASEURL.'/config/config.php');
 
     class BaseModel {
         function load();

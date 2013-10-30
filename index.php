@@ -6,33 +6,12 @@
 */
 
 session_start();
-include_once("config/config.php");
-$controllers_available = array("main", "upload", );
+include_once("./config/config.php");
+$controllers_available= array('main','upload');
 
-// HEADER definition
-$header = <<< EOD1
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title><?php echo(SITENAME) ?></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="author" content="Copyrigth 2013 Pedro A. Flores Prieto, Samira C. Oliva Madrigal"/>
-        <meta name="description" content="LooneyLimericks.com" />
-        <meta http-equiv="keywords" content=""/>
-        <meta name="robots" content="NOINDEX, NOFOLLOW"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link rel="icon" type="image/png" href="/css/logo.png"/>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
-    </head>       
-    <body>
-EOD1;
 
-// FOOTER definition
-$footer = <<< EOD2
-<!-- footer -->
-</body>
-</html>
-EOD2;
+
+
 
 //-------------------------------------------------------------
 //Determine the Controller to call to decide what view to draw
@@ -67,3 +46,8 @@ function draw($view)
 }
 
 ?> <!-- main bracket -->
+
+<?php 
+ require_once './config/config.php';
+ echo '<br>';
+ echo 'action='."\"".BASEURL."/controllers/upload.php\"" ?>

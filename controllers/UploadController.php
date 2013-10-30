@@ -1,8 +1,0 @@
-<?php
-# upload.php controller
-#
-# 
-    
-    
-?>
-

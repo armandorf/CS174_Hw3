@@ -1,37 +1,16 @@
-<?php
-/*
+<!--/*
 # index.php
 # CS174_hw3
 # Pedro A. Flores Prieto, Samira C. Oliva Madrigal
-*/
+*/-->
 
+<?php
 session_start();
-include_once("config/config.php");
-$controllers = array("main");
-
-// HEADER
-$header = <<< EOD1
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="author" content="Copyrigth 2013 Pedro A. Flores Prieto, Samira C. Oliva Madrigal"/>
-        <meta name="description" content="LooneyLimericks.com" />
-        <meta http-equiv="keywords" content=""/>
-        <meta name="robots" content="NOINDEX, NOFOLLOW"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link rel="icon" type="image/png" href="/css/logo.png"/>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen"/>
-        </head>       
-        <body>
-EOD1;
-
-// FOOTER
-$footer = <<< EOD2
-<!-- footer -->
-</body>
-</html>
-EOD2;
+include_once("./config/config.php");
+$controllers_available= array('main','upload');
 
 //-------------------------------------------------------------
-//Determine the Controller to call
+//Determine the Controller to call to decide what view to draw
 if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
 {
        $pivot = strtolower($_GET['c']);
@@ -50,23 +29,26 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
         
 }
 
-//-------------------------------------------------------------
-//draw the view
-function draw($view)
-{
-    global $header;
-    global $footer;
-    echo   $header;
-?>    
-<!DOCTYPE html>
-    <html>
-        <head>
-            <title><?php echo(SITENAME) ?></title>
-    
-    <?php    
-        echo $header;    
-        require_once(BASEURL."/views/{$view}.php"); 
-        echo $footer;
+////-------------------------------------------------------------
+////draw the view
+//function draw($view)
+//{
+//    global $header;
+//    global $footer;
+//    
+//    echo $header;    
+//    require_once(BASEURL."/views/{$view}.php"); 
+//    echo $footer;
 }
 
+?> 
+
+<?php 
+    include_once './views/BaseView.php';
+    $b = new BaseView;
+    
+    $b->printHeader();
+    echo "something here";
+    echo '<br>';
+    $b->printFooter();
 ?>

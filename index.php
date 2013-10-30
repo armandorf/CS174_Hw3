@@ -20,14 +20,16 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
         case "landing_controller":
             include_once("./controllers/landing_controller.php");
             $_SESSION['view'] = $_GET['c'];
-            
-            $controller = $pivot;
+            //$controller = $pivot;
             
             break;
         case "upload":
-            $controller = $pivot;
+	   include_once("./controllers/upload.php");
+           // $controller = $pivot;
             break;
         case "single_poem":
+	    include_once("./controllers/landing_controller.php");
+	
             $controller = $pivot;
             break;
         default:

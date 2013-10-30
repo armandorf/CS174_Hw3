@@ -7,7 +7,7 @@
 <?php
 session_start();
 include_once("./config/config.php");
-$controllers_available= array('main', 'upload', 'single_poem');
+$controllers_available= array('landing', 'upload', 'single_poem');
 $controller = ""; // will contain the controller that will call the proper view
 
 //Determine the Controller to decide what view to draw
@@ -15,8 +15,11 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
 {
    $pivot = strtolower($_GET['c']);
    switch(strtolower($pivot)) {
-        case "main":
+        case "landing":
+            // call "landing" controller
+            
             $controller = $pivot;
+            
             break;
         case "upload":
             $controller = $pivot;
@@ -25,7 +28,7 @@ if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
             $controller = $pivot;
             break;
         default:
-            $controller = "main";
+            $controller = "landing";
     }
 }
 

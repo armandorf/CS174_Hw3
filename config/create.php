@@ -31,11 +31,11 @@
     $table = "CREATE TABLE poems
     (
         id MEDIUMINT NOT NULL AUTO_INCREMENT,
-        timeStamp DATETIME NOT NULL, 
         title VARCHAR(100) NOT NULL, 
         content VARCHAR(500) NOT NULL,
         starAverage INT,
-        PRIMARY KEY (timeStamp)
+        timeStamp DATETIME NOT NULL,         
+        PRIMARY KEY (id)
     )";
     if (mysqli_query($db_connect, $table))
         echo "Table was created successfully";
@@ -44,4 +44,4 @@
  
 // DATETIME example: YYYY-MM-DD HH:MM:SS, such as 2008-10-23 10:37:22
 
- 
+ ?>

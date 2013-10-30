@@ -5,28 +5,41 @@
     class upload extends BaseView {
 
     public $upload = <<<UPLOAD
-<form name="poem_data" method="post" <?php echo action= . "\"" . BASEURL . "/controllers/upload.php\"" ?> 
-    <fieldset>
-        <legend>
-            Upload your Limerick
-        </legend>
+<form name="poem_data" method="POST" action="index.php?c=upload"> 
+<!-- <?php echo action= . "\"" . BASEURL . "/controllers/upload_controller.php\"" ?> 
+-->
+<table> <!-- format table -->
+<tr>
+<th>Upload your Limerick</th></tr>
+<tr><td>
         <label>
-            Author:
+            Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" name="author" id="author" size="30" maxlength="100" required="required">
-        </label>
+        </label> </td></tr>
         <br />
-        <label>
-            Poem Title:
+<tr><td><label>
+            Poem Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" name="title" size="30" maxlength="100" required="required">
-        </label>
+        </label>  </td></tr>
         <br />
-        <label>
+<tr><td><label>  
             Poem Contents:
             <textarea rows="15" cols="40" id="poem_contents" name="poem_contents" required="required"></textarea>
-        </label>
+        </label> </td></tr>
+
+<tr><td>
+	<input type="hidden" name="c" value="main">
+	<input type="hidden" name="view" value="notloggedin">
+	<input type="submit" value="Cancel">
+
+
+
+<tr><td>
         <input type="submit" name="submit_poem">
-    </fieldset>
+    </fieldset></td></tr>
+</table>
 </form>  
+
 UPLOAD;
 
         public function drawUploadView() {

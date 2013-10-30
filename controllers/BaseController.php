@@ -6,9 +6,31 @@
     require_once('./config/config.php');
 
     class BaseController {
+
+        private $controller;
+
         //selects appropriate view		
-        function controller() {
+        public function callView($view) {
+            $_SESSION['view'] = $view;
             
         }
+
+        function uploadNewPoem($title, $poem, $author, $timestamp, $starRating) {
+            // call appropriate method from model class
+        }
+
+        function getRandomPoem($randIDNum) {
+            
+        }
+
+        function getPoemByTitle($title) {
+            
+        }
+
+        public function setController($aControllerName) {
+            $controller = $aControllerName;
+        }
+
     }
+
 ?>

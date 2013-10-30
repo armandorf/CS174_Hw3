@@ -1,6 +1,11 @@
-<?php ?>
+<?php
 
-<form name="poem_data" method="get" <?php echo 'action='."\"".BASEURL."/controllers/upload.php\"" ?> >
+    include_once 'BaseView.php';
+
+    class upload extends BaseView {
+
+    public $upload = <<<UPLOAD
+<form name="poem_data" method="post" <?php echo action= . "\"" . BASEURL . "/controllers/upload.php\"" ?> 
     <fieldset>
         <legend>
             Upload your Limerick
@@ -22,3 +27,10 @@
         <input type="submit" name="submit_poem">
     </fieldset>
 </form>  
+UPLOAD;
+
+        public function drawUploadView() {
+            echo $this->upload;
+        }
+    }
+?>

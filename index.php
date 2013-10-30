@@ -7,48 +7,66 @@
 <?php
 session_start();
 include_once("./config/config.php");
-$controllers_available= array('main','upload');
 
-//-------------------------------------------------------------
-//Determine the Controller to call to decide what view to draw
-if (isset($_GET['c']) && in_array($_GET['c'], $controllers))
+
+$controllers_available= array('landing', 'upload', 'single_poem');
+$controller = ""; // will contain the controller that will call the proper view
+
+//Determine the Controller to decide what view to draw
+if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
 {
-       $pivot = strtolower($_GET['c']);
-       switch(strtolower($pivot)) {
-            case "main":
-            require_once(BASEURL.'/controllers/main.php');
-            mainController();
-            draw($_SESSION['view']);
+   $pivot = strtolower($_GET['c']);
+   switch(strtolower($pivot)) {
+        case "landing_controller":
+            include_once("./controllers/landing_controller.php");
+            $_SESSION['view'] = $_GET['c'];
+            
+            $controller = $pivot;
+            
             break;
-
-            case "upload":
-            require_once(BASEURL.'/controllers/upload.php');
-            uploadController();
-            draw($_SESSION['view']);
-        }
-        
+        case "upload":
+            $controller = $pivot;
+            break;
+        case "single_poem":
+            $controller = $pivot;
+            break;
+        default:
+            $_GET["c"] = "landing_controller";
+    }
 }
 
-////-------------------------------------------------------------
-////draw the view
-//function draw($view)
-//{
-//    global $header;
-//    global $footer;
-//    
-//    echo $header;    
-//    require_once(BASEURL."/views/{$view}.php"); 
-//    echo $footer;
-}
+
+
 
 ?> 
 
 <?php 
+    require_once("./config/config.php");
+    // test if database works
+    // if
+?>
+<?php 
     include_once './views/BaseView.php';
+    include_once './views/upload.php';
+    
     $b = new BaseView;
+    $a = new upload;
+    
+    $a->drawUploadView();
+    
     
     $b->printHeader();
     echo "something here";
     echo '<br>';
+    
     $b->printFooter();
+    
+   
+    
+    
+   
+    
+    
+    
+    
 ?>

@@ -1,9 +1,9 @@
 <?php
     /*
-# Create File:
-# CS174_hw3
-# Pedro A. Flores Prieto, Samira C. Oliva Madrigal
-*/
+      # Create File:
+      # CS174_hw3
+      # Pedro A. Flores Prieto, Samira C. Oliva Madrigal
+     */
 
     require_once("config.php");
     $dbName = 'POEMS_DB';
@@ -24,22 +24,25 @@
 
 // CREATE TABLES
     /*
-# timeStamp: date the poem was created/uploaded
-# title: poem title
-# content: poem content
-*/
+      # timeStamp: date the poem was created/uploaded
+      # title: poem title
+      # content: poem content
+     */
     $table = "CREATE TABLE poems
-(
-id MEDIUMINT NOT NULL AUTO_INCREMENT,
-timeStamp DATETIME NOT NULL,
-title VARCHAR(100) NOT NULL,
-content VARCHAR(500) NOT NULL,
-starAverage INT,
-PRIMARY KEY (timeStamp)
-)";
+    (
+        title VARCHAR(100) NOT NULL, 
+        content VARCHAR(500) NOT NULL,
+        authorName VARCHAR(100) NOT NULL,
+        starAverage INT,
+        timeStamp DATETIME NOT NULL,
+        id MEDIUMINT NOT NULL AUTO_INCREMENT,
+        PRIMARY KEY (id)
+    )";
     if (mysqli_query($db_connect, $table))
         echo "Table was created successfully";
     else
-        echo "Error creating table in the database" . mysqli_error($db_connect);
+        echo "Error creating table in the database" . mysqli_error($db_connect);    
  
 // DATETIME example: YYYY-MM-DD HH:MM:SS, such as 2008-10-23 10:37:22
+
+ ?>

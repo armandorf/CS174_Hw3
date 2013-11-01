@@ -3,6 +3,11 @@
     # CS174_hw3
     # Pedro A. Flores Prieto, Samira C. Oliva
 
+    // dababase connection info
+    $host_name = "localhost";
+    $admin_name = "root";
+    $admin_passwd = "rosso99";
+    
     //base URL for the website
     define("BASEURL", 'http://localhost/CS173_Hw3');
 
@@ -10,12 +15,8 @@
     define("SITENAME", "Looney Limericks");
 
     define("qDATABASE", "POEMS_DB");
-
-    // dababase connection info
-    $host_name = "localhost";
-    $admin_name = "root";
-    $admin_passwd = "root";
+    $table = "poems";
+    
+    $db_connect = mysqli_connect("$host_name", "$admin_name", "$admin_passwd", qDATABASE);
 ?>
-
-
 

@@ -1,3 +1,4 @@
+
 <?php
     # Config File:
     # CS174_hw3
@@ -6,7 +7,7 @@
     // dababase connection info
     $host_name = "localhost";
     $admin_name = "root";
-    $admin_passwd = "rosso99";
+//    $admin_passwd = "setVal";
     
     //base URL for the website
     define("BASEURL", 'http://localhost/CS173_Hw3');

@@ -1,36 +1,20 @@
 <?php
-    # base.class.php controller "landing controller"
-    # Pedro A. Flores Prieto & Samira C. Oliva Madrigal
-    # CS174_HW3
 
-    require_once('./config/config.php');
+# base.class.php controller "landing controller"
+# Pedro A. Flores Prieto & Samira C. Oliva Madrigal
+# CS174_HW3
 
-    class BaseController {
+require_once('./config/config.php');
 
-        private $controller;
 
-        //selects appropriate view		
-        public function callView($view) {
-            $_SESSION['view'] = $view;
-            
-        }
 
-        function uploadNewPoem($title, $poem, $author, $timestamp, $starRating) {
-            // call appropriate method from model class
-        }
+abstract class baseController {
 
-        function getRandomPoem($randIDNum) {
-            
-        }
+        abstract function controller($view);
+	abstract function drawView($view);
+        
 
-        function getPoemByTitle($title) {
-            
-        }
-
-        public function setController($aControllerName) {
-            $controller = $aControllerName;
-        }
-
-    }
+}
 
 ?>
+

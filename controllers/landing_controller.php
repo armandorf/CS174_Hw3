@@ -14,7 +14,18 @@ class landing extends baseController
    
     function printHeader()
     {
+<<<<<<< HEAD
 	parent::printHeader();
+=======
+        
+        function getTenMostRecentPoems () {
+            // MySQL query to show 10 most recent poem entries by time or uploading
+            $getEntriesByDate = "SELECT * FROM animals ORDER BY grp,id";
+        
+        }
+        
+        
+>>>>>>> d4f3164b27b84ac3c7f4cd0b465ae9caf420b060
     }
 
     function printFooter()

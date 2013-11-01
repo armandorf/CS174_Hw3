@@ -7,7 +7,7 @@
     // dababase connection info
     $host_name = "localhost";
     $admin_name = "root";
-//    $admin_passwd = "setVal";
+    $admin_passwd = "setVal";
     
     //base URL for the website
     define("BASEURL", 'http://localhost/CS173_Hw3');

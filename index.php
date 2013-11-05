@@ -1,74 +1,60 @@
-<!--/*
+<?php
+
 # index.php
 # CS174_hw3
-# Pedro A. Flores Prieto, Samira C. Oliva Madrigal
-*/-->
+# Created on 10/26/13.
+# Copyright (c) 2013 Pedro A. Flores Prieto, Samira C. Oliva Madrigal
 
-<?php
+
 session_start();
 include_once("./config/config.php");
-
 
 $controllers_available= array('landing', 'upload', 'single_poem');
 $controller = ""; // will contain the controller that will call the proper view
 
 //Determine the Controller to decide what view to draw
 if (isset($_GET['c']) && in_array($_GET['c'], $controllers_available))
-{
+{  
    $pivot = strtolower($_GET['c']);
+   $_SESSION['view'] = $_GET['c']; 
    switch(strtolower($pivot)) {
         case "landing_controller":
             include_once("./controllers/landing_controller.php");
-            $_SESSION['view'] = $_GET['c'];
-            //$controller = $pivot;
-            
+	    $ctrl = new landing; //obj
+	    $ctrl->controller($_SESSION['view']);            
             break;
-        case "upload":
+        
+	case "upload":
 	   include_once("./controllers/upload.php");
-           // $controller = $pivot;
-            break;
+           $ctrl = new upload; //obj
+           $ctrl->controller($_SESSION['view']);
+	   break;
+
         case "single_poem":
-	    include_once("./controllers/landing_controller.php");
-	
-            $controller = $pivot;
+	    include_once("./controllers/single_poem.php");
+	    $ctrl = new singlePoem; //obj
+            $ctrl->controller($_SESSION['view']);
             break;
+
         default:
-            $_GET["c"] = "landing_controller";
-    }
+            include_once("./controllers/landing_controller.php");
+            $ctrl = new landing; //obj
+            $ctrl->controller($_SESSION['view']);
+
+    }//_end_switch
+
+}//_end_if
+else{	
+      $_GET['c'] = "landing";
+      $_SESSION['view'] = $_GET['c'];
+      include_once("./controllers/landing_controller.php");
+      $ctrl = new landing; //obj
+      $ctrl->controller($_SESSION['view']);
 }
+
 
 
 
 
 ?> 
 
-<?php 
-    require_once("./config/config.php");
-    // test if database works
-    // if
-?>
-<?php 
-    include_once './views/BaseView.php';
-    include_once './views/upload.php';
-    
-    $b = new BaseView;
-    $a = new upload;
-    
-    $a->drawUploadView();
-    
-    
-    $b->printHeader();
-    echo "something here";
-    echo '<br>';
-    
-    $b->printFooter();
-    
-   
-    
-    
-   
-    
-    
-    
-    
-?>

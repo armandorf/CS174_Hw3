@@ -1,7 +1,7 @@
 #######################################################################
-#   readme.txt							      #
-#   Pedro A. Flores Prieto & Samira C. Oliva Madrigal	      	      #
-#   CS174 Hw3							      #
+#   readme.txt						              #
+#   Pedro A. Flores Prieto & Samira C. Oliva Madrigal                 #
+#   CS174 Hw3                                                         #
 #######################################################################
 //--------------------------------------------------------------------------
 GETTING STARTED:

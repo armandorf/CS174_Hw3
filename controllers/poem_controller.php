@@ -1,8 +1,10 @@
 <?php
 
-# poem controller
-# Pedro A. Flores & Samira C. Oliva
-#
+# Controllers: poem controller
+# Model: Featured
+# CS174_hw3
+# Created on 10/26/13.
+# Copyright (c) 2013 Pedro A. Flores Prieto, Samira C. Oliva Madrigal
 
 require_once(BASEURL.'/models/featured.php');
 

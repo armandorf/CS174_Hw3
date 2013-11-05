@@ -20,20 +20,24 @@ input,textarea{color:red;border:solid 1px #d2d2d2;padding:2px;}
 a{align:right;font-size:9px;color:#000000;}
 #login{background:#DBFEF8;} /*mint blue*/
 a:focus{outline:none}
-a:link{text-decoration: none}
+a:link{color: purple; text-decoration: none;}
 a:visited{color: #006600; text-decoration:none}
-a:hover{color: steelblue; text-decoration:none}
-a:active{color: #00a9a4; text-decoration:none}
+a:hover{color: red; text-decoration:none} /*steelblue*/
+a:active{color: purple; text-decoration:none}
 select{border:solid 1px #9b9b9b;color:#717171;}
-hr {background-color: red; color: azure; height: 5px}
-
-
+hr {background-color: #6600CC; color: azure; height: 5px}
+.links{margin:100px;}
+#links{margin-right:20px; width:170px;color:#6600CC;}
 /*LAYOUT*/
 #layout{position:absolute;width:970px;margion:0;}
 #body{position:relative;}
 #content
 .f1{ margin:0 auto;}
 .r{margin: 0 auto;}
+text {font-size:9px;font-weight:bold;}
+.list{margin-right:20px;} 
+
+
 
 /* LANDING PAGE */
 .atable{
@@ -56,7 +60,6 @@ hr {background-color: red; color: azure; height: 5px}
 }
 
 .list{padding:12px;align:"right";}
-
 
 #aImg{padding:100px;}
 #aSpc{padding:100px;}
